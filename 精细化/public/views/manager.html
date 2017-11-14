@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div navbar-header >
+            <a type="button" class="navbar-brand" href="#" >大数据平台</a>
+            <!--<button type="button" class="btn" id="dropdownhead_jxh" ng-click="jump()">hhh</button>-->
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        精细化指标
+                        <b class="caret"></b>
+                    </button>
+                    <!--<a  href="#" class="dropdown-toggle" data-toggle="dropdowm" ng-click="jump()">
+                        精细化指标
+                        &lt;!&ndash;鼠标放上去，颜色加深&ndash;&gt;
+                        <b class="caret"></b>
+                    </a>-->
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation" ui-sref="manager.department"><a href="#" data-toggle="pill">部门</a></li>
+                        <li role="presentation" ui-sref="manager.application" class="active"><a href="#" data-toggle="pill">应用</a></li>
+                        <li role="presentation" ui-sref="manager.project"><a href="#" data-toggle="pill">项目</a></li>
+                        <li role="presentation" ui-sref="manager.team"><a href="#" data-toggle="pill">小组</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        质量指标
+                        <b class="caret"></b>
+                    </button>
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdowm">
+                        质量指标
+                        &lt;!&ndash;鼠标放上去，颜色加深&ndash;&gt;
+                        <b class="caret"></b>
+                    </a>-->
+                    <ul class="dropdown-menu">
+                        <li role="presentation" ui-sref="manager.quality_department"><a href="#" data-toggle="pill">部门</a></li>
+                        <li role="presentation" ui-sref="manager.quality_application"><a href="#" data-toggle="pill">应用</a></li>
+                        <li role="presentation" ui-sref="manager.quality_project"><a href="#" data-toggle="pill">项目</a></li>
+                        <li role="presentation" ui-sref="manager.quality_team"><a href="#" data-toggle="pill">小组</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div ui-view></div>
+</nav>

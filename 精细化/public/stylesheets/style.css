@@ -1,0 +1,16 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+table{
+  width: 100%;
+}
+th{
+  text-align: center;
+  background-color: rgb(204,255,255);
+}

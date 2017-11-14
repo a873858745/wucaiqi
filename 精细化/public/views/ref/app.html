@@ -1,0 +1,108 @@
+<div ng-controller="queryJXHAppDataCtrl" style="margin: 0 30px">
+    <div class="text-center">
+        <h3><b>应用维度精细化指标<small>(数据更新日期:{{lastupdate}})</small></b></h3>
+    </div>
+    <!--选择版本-->
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <td>年度</td>
+                <td>
+                    <div>
+                        <span ng-repeat="item in yearlist">
+                            <input type="radio" name="choose_year" ng-value="item" ng-model="$parent.yearchoose" ng-click="queryAppDataByVersion()">{{item}}年
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>版本</td>
+                <td>
+                    <div>
+                        <form id="chooseversion_form_jxh_app" action="" method="post">
+                            <span ng-repeat="item in versionlist">
+                                <label style="font-weight: normal"><input type="checkbox" name="choose_version" value={{item}} ng-click="queryAppDataByVersion()">{{item}}月版本</label>
+                            </span>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>部门</td>
+                <td>
+                    <div>
+                        <span ng-repeat="item in deptlist track by $index">
+                            <input type="radio" name="choose_dept" ng-value="item" ng-model="$parent.deptchoose" ng-click="queryAppDataByVersion()">{{item}}
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--根据应用选择数据-->
+    <div>
+        <span>选择应用:</span>
+        <select id="jxhAppSelect" style=" width:100px;" ></select>
+        <input type='button' value='查询' ng-click="queryJXHAppDataByApp()"/>
+    </div>
+
+    <nav class="page-header">
+        <h3><b>{{yearchoose}}年{{monthchoose}}月份版本精细化情况</b></h3>
+    </nav>
+    <!--展现数据的表格-->
+    <div style="position: relative;height: 300px;overflow-y: scroll">
+        <table id="app_table" border="1">
+            <tbody align="center">
+                <div>
+                    <tr class="tabTh">
+                        <th rowspan="3" colspan="1" nowrap="nowrap">序号</th>
+                        <th rowspan="3" colspan="1" nowrap="nowrap">版本</th>
+                        <th rowspan="3" colspan="1" nowrap="nowrap">部门</th>
+                        <th rowspan="3" colspan="1" nowrap="nowrap">应用</th>
+                        <th rowspan="1" colspan="3" nowrap="nowrap">工作量落实情况</th>
+                        <th rowspan="1" colspan="8" nowrap="nowrap">研发进度情况</th>
+                    </tr>
+                    <tr class="tabTh">
+                        <th colspan="1" rowspan="2"  nowrap="nowrap" style="width: 80px">ADLM工作量（人月）</th>
+                        <th colspan="1" rowspan="2"  nowrap="nowrap" style="width: 80px">已导入条目工作量</th>
+                        <th colspan="1" rowspan="2"  nowrap="nowrap" style="width: 80px">已导入条目工作量占比</th>
+                        <th colspan="2" rowspan="1"  nowrap="nowrap" >已完成需求分析占比</th>
+                        <th colspan="2" rowspan="1"  nowrap="nowrap" >已完成设计占比</th>
+                        <th colspan="2" rowspan="1"  nowrap="nowrap" >已完成编码占比</th>
+                        <th colspan="2" rowspan="1"  nowrap="nowrap" >已完成测试占比</th>
+                    </tr>
+                    <tr class="tabTh">
+                        <th nowrap="nowrap">当期版本</th>
+                        <th nowrap="nowrap">部门平均</th>
+                        <th nowrap="nowrap">当期版本</th>
+                        <th nowrap="nowrap">部门平均</th>
+                        <th nowrap="nowrap">当期版本</th>
+                        <th nowrap="nowrap">部门平均</th>
+                        <th nowrap="nowrap">当期版本</th>
+                        <th nowrap="nowrap">部门平均</th>
+                    </tr>
+                    <tr ng-repeat="item in jxhappdata">
+                        <td>{{$index+1}}</td>
+                        <td>{{item["version"]}}</td>
+                        <td>{{item["dept"]}}</td>
+                        <td>{{item["appShortName"]}}</td>
+                        <td>{{item["ADLMWlColl"]}}</td>
+                        <td>{{item["ImpoWl"]}}</td>
+                        <td>{{item["RImpoWl"]}}</td>
+                        <td>{{item["RCompDemaAnalWl"]}}</td>
+                        <td>{{item["deptRCompDemaAnalWl"]}}</td>
+                        <td>{{item["RCompDetaDesign"]}}</td>
+                        <td>{{item["deptRCompDetaDesign"]}}</td>
+                        <td>{{item["RCompCoding"]}}</td>
+                        <td>{{item["deptRCompCoding"]}}</td>
+                        <td>{{item["RCompTest"]}}</td>
+                        <td>{{item["deptRCompTest"]}}</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div id="jxhAppEChartMap" style="position: relative;height: 400px"></div>
+</div>

@@ -1,0 +1,25 @@
+<div ng-controller="logonCtrl" class="top-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text">
+                <h1><strong>大数据服务平台</strong></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 com-sm-offset form-box">
+                <div class="form-top">
+                    <h3>请输入您的用户名和密码</h3>
+                </div>
+                <div class="form-bottom">
+                    <form>
+                        <div class="form-group">
+                            <label>用户名：<input id="form-username" type="text" name="form-username"  placeholder="请输入用户名" class="form-username form-control"></label>
+                            <label>密码：<input id="form-password" type="password" name="form-password"  placeholder="请输入密码" class="form-password form-control"></label>
+                        </div>
+                        <button type="button" class="btn" ng-click="logonAuth()">登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
