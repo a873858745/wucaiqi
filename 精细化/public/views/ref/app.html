@@ -53,7 +53,7 @@
     <div style="position: relative;height: 300px;overflow-y: scroll">
         <table id="app_table" border="1">
             <tbody align="center">
-                <div>
+                <div style="display:block;border-bottom:1px solid #eee;">
                     <tr class="tabTh">
                         <th rowspan="3" colspan="1" nowrap="nowrap">序号</th>
                         <th rowspan="3" colspan="1" nowrap="nowrap">版本</th>
@@ -81,6 +81,8 @@
                         <th nowrap="nowrap">当期版本</th>
                         <th nowrap="nowrap">部门平均</th>
                     </tr>
+                </div>
+                <div style="display:block; max-height:100px;overflow-y: scroll;">
                     <tr ng-repeat="item in jxhappdata">
                         <td>{{$index+1}}</td>
                         <td>{{item["version"]}}</td>

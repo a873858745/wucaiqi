@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ic_launcher"
+     >
+
+    <EditText 
+        android:id="@+id/loc_detialX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:digits="0123456789."
+        android:ems="10"
+        android:hint="输入横坐标">
+        <requestFocus/>
+        </EditText>
+    <EditText 
+        android:id="@+id/loc_detialY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/loc_x"
+        android:digits="0123456789."
+        android:ems="10"
+        android:hint="输入纵坐标"
+        />
+    <EditText 
+        android:id="@+id/et_detialLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/loc_y"
+        android:ems="10"
+        android:hint="输入位置信息"
+        android:inputType="textMultiLine"
+        />
+    <Button
+        android:id="@+id/btn_editLocDetial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/et_loc"
+        android:text="修改参考点信息" />
+
+    <Button
+        android:id="@+id/btn_refreshLocDetial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/et_loc"
+        android:text="刷新" />
+
+    <Button
+        android:id="@+id/buttonW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="增加变异系数" />
+
+</LinearLayout>

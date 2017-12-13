@@ -208,12 +208,14 @@ app.controller('queryJXHAppDataCtrl', function ($scope,$http) {
             },
             xAxis:{
                 type:'category',
-                "axisLabel":{interval:0},
+                "axisLabel":{interval:0,
+                },
                 data:getJXHAppNameCol(input),
-                dataZoom:{
-                    type:'slider',
-                    orient:'horizontal'
-                }
+            },
+            dataZoom:{
+                type:'slider',
+                orient:'horizontal',
+                filterMode:"filter",
             },
             yAxis:{
                 type:'value',

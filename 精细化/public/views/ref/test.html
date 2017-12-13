@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格顶部悬浮效果</title>
+    <!--<script src="jquery-latest.js"></script>-->
+    <style>
+        .container {
+            width: 980px;
+            margin: 0 auto;
+        }
+        .top {
+            height: 100px;
+            background-color: #80ff80;
+        }
+
+        .table {
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+
+        .table thead {
+            height: 50px;
+        }
+
+        .table tr td,
+        .table tr th {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="top"></div>
+<table id="scroll_bar" class="table container" border="1">
+    <thead>
+    <tr id="bar_head">
+        <th>表头1</th>
+        <th>表头2</th>
+        <th>表头3</th>
+        <th>表头4</th>
+        <th>表头5</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>5</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    $(function(){
+        var scroll_bar = $("#scroll_bar");//表格的id
+        var bar_head = $("#bar_head");//表头
+        var bar_height = bar_head.height();//表头高
+        var sroll_header= scroll_bar.clone().attr('id','bb');//更改复制的表格id
+        $(window).scroll(function(){
+            var scroll_top = $('body').scrollTop() - scroll_bar.offset().top;//判断是否到达窗口顶部
+
+            if (scroll_top > 0) {
+                $('body').append('<div id="shelter"></div>');//复制的表格所在的容器
+                $("#shelter").css({'height':bar_height,'position':'fixed','top':'0','overflow':'hidden','width':'980px','margin': '0 auto','left':'0','right':'0','border-bottom':'1px solid #c8c8c8'});
+                sroll_header.appendTo('#shelter');
+                $('#shelter table').removeClass(); //删除table原来有的默认class，防止margin,padding等值影响样式
+                $('#shelter table').css({'width':'980px','background-color':'#f0f0f0','margin':'0 auto'});
+                $('#shelter table tr th').css('height', bar_height);//此处可以自行发挥
+                $('#shelter table tr td').css({'padding':'20px','text-align':'center'});
+
+                $('#shelter').show();
+
+            }else {
+                $('#shelter').hide();
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>

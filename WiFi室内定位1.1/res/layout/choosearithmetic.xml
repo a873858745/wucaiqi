@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img3"
+     >
+
+    
+    <Button
+        android:id="@+id/btn_triangle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="三角质心算法" />
+    <Button
+        android:id="@+id/btn_KDWKNN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="KDWKNN" />
+    <Button
+        android:id="@+id/btn_knn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="knn算法 " />
+    <Button
+        android:id="@+id/btn_kmeans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Kmeans" />
+
+    <Button
+        android:id="@+id/btn_KWKNN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="KWKNN" />
+
+    <Button
+        android:id="@+id/btn_nn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="NN" />
+
+</LinearLayout>

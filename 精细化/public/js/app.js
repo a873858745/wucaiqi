@@ -44,7 +44,7 @@ app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $ur
             templateUrl:"views/ref/proj.html"
     }).state("manager.team",{
             url:"/team",
-            templateUrl:"views/ref/team.html"
+            templateUrl:"views/ref/test.html"
         })
     //质量指标
         .state("manager.quality_department",{

@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:background="@drawable/ic_launcher"
+     >
+
+    <EditText 
+        android:id="@+id/loc_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:digits="0123456789."
+        android:ems="10"
+        android:hint="输入横坐标">
+        <requestFocus/>
+        </EditText>
+    <EditText 
+        android:id="@+id/loc_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/loc_x"
+        android:digits="0123456789."
+        android:ems="10"
+        android:hint="输入纵坐标"
+        />
+    <EditText 
+        android:id="@+id/et_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/loc_y"
+        android:ems="10"
+        android:hint="输入位置信息"
+        android:inputType="textMultiLine"
+        />
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/et_loc"
+        android:text="点我提交" />
+
+</RelativeLayout>
